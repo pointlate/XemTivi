@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt' // Thêm dòng này nếu dùng dataBinding
+}
 }
 
 android {
@@ -29,7 +31,7 @@ android {
         jvmTarget = '1.8'
     }
     buildFeatures {
-        viewBinding true
+        viewBinding true // Hoặc dataBinding true
     }
 }
 
