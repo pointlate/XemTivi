@@ -1,8 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'kotlin-kapt' // Thêm dòng này nếu dùng dataBinding
-}
+    // Nếu dự án của bạn dùng DataBinding hoặc Room, hãy bỏ comment dòng dưới:
+    // id 'kotlin-kapt' 
 }
 
 android {
@@ -23,29 +23,37 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    
     buildFeatures {
-        viewBinding true // Hoặc dataBinding true
+        viewBinding true
     }
 }
 
 dependencies {
+    // Thư viện cơ bản của Android
     implementation 'androidx.core:core-ktx:1.12.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'androidx.leanback:leanback:1.0.0'
-    implementation 'androidx.recyclerview:recyclerview:1.3.2'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     
+    // Thư viện cho Android TV (Leanback)
+    implementation 'androidx.leanback:leanback:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+
+    // ExoPlayer để phát video (Media3)
     implementation 'androidx.media3:media3-exoplayer:1.2.1'
     implementation 'androidx.media3:media3-exoplayer-hls:1.2.1'
     implementation 'androidx.media3:media3-ui:1.2.1'
-    
+
+    // Mạng và Coroutines
     implementation 'com.squareup.okhttp3:okhttp:4.12.0'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'
