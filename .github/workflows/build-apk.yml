@@ -1,4 +1,4 @@
     - name: Setup Android SDK
-      uses: android-actions/setup-android@v4   # <-- Đổi thành v4
+      uses: android-actions/setup-android@v3
       with:
-        packages: 'platform-tools'             # <-- Thêm dòng này
+        packages: 'platform-tools'   # <-- Thêm 2 dòng này
