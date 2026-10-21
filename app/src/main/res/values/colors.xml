@@ -1,0 +1,8 @@
+<resources>
+    <color name="bg_dark">#0D1B2A</color>
+    <color name="bg_panel">#1B263B</color>
+    <color name="accent">#FF6B35</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B0BEC5</color>
+    <color name="focus_bg">#415A77</color>
+</resources>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark">
+
+    <!-- Trình phát video toàn màn hình -->
+    <androidx.media3.ui.PlayerView
+        android:id="@+id/player_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black" />
+
+    <!-- Hiển thị thông báo/loading/error -->
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/text_primary"
+        android:textSize="20sp"
+        android:visibility="gone" />
+
+    <!-- Overlay hiển thị số kênh khi đang nhập từ remote -->
+    <TextView
+        android:id="@+id/tv_number_overlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="32dp"
+        android:padding="16dp"
+        android:background="@color/accent"
+        android:textColor="@color/bg_dark"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <!-- Danh sách kênh bên trái, ẩn/hiện bằng phím DPAD_LEFT/MENU -->
+    <LinearLayout
+        android:id="@+id/left_panel"
+        android:layout_width="360dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/bg_dark"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:visibility="gone"
+        android:elevation="8dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/accent"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingBottom="12dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_channels"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:paddingBottom="16dp" />
+    </LinearLayout>
+</FrameLayout>

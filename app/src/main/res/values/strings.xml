@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Xem Tivi</string>
+    <string name="loading">Đang tải danh sách kênh…</string>
+    <string name="error_network">Không thể tải M3U. Vui lòng kiểm tra mạng.</string>
+    <string name="channel_number_prefix">Kênh </string>
+    <string name="no_channels">Không có kênh nào trong danh sách mục tiêu.</string>
+</resources>
