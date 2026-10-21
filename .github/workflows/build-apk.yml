@@ -20,12 +20,14 @@ jobs:
         java-version: '17'
         cache: 'gradle'
 
+    # BƯỚC QUAN TRỌNG: Tự động tải file JAR bị thiếu
+    - name: Download Gradle Wrapper JAR
+      run: |
+        mkdir -p gradle/wrapper
+        curl -L -o gradle/wrapper/gradle-wrapper.jar https://raw.githubusercontent.com/gradle/gradle/v8.4.0/gradle/wrapper/gradle-wrapper.jar
+
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-
-    # Chấp nhận giấy phép Android SDK tự động để tránh lỗi build
-    - name: Accept Android SDK Licenses
-      run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
 
     - name: Build Debug APK
       run: ./gradlew assembleDebug --stacktrace
